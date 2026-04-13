@@ -1,0 +1,287 @@
+.property-details-page {
+  padding: 100px 5% 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.page-loading {
+  padding: 150px 0;
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.back-nav:hover {
+  text-decoration: underline;
+}
+
+.pd-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pd-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.pd-rating, .pd-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pd-gallery {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  height: 50vh;
+  min-height: 400px;
+}
+
+.pd-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-content {
+  display: flex;
+  gap: 80px;
+}
+
+.pd-info {
+  flex: 1;
+}
+
+.pd-info h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pd-sub {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.pd-divider {
+  border: 0;
+  border-top: 1px solid var(--surface-border);
+  margin: 32px 0;
+}
+
+.pd-description h3, .pd-amenities h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.pd-description p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+}
+
+.pd-sidebar {
+  width: 350px;
+  position: relative;
+}
+
+.booking-widget {
+  position: sticky;
+  top: 100px;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.bw-header {
+  margin-bottom: 24px;
+}
+
+.bw-price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bw-night {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.bw-inputs {
+  border: 1px solid #717171;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.bw-dates {
+  display: flex;
+}
+
+.bw-input-group {
+  padding: 10px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.border-right {
+  border-right: 1px solid #717171;
+}
+
+.border-top {
+  border-top: 1px solid #717171;
+}
+
+.bw-input-group label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.bw-input-group input, .bw-input-group select {
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  padding: 6px 0;
+  width: 100%;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.bw-input-group input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.8;
+}
+
+.bw-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.bw-submit.success {
+  background: #28a745;
+}
+
+.bw-note {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.review-form {
+  background: var(--surface-glass);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--surface-border);
+  margin-bottom: 32px;
+}
+
+.review-form h4 {
+  margin-bottom: 12px;
+}
+
+.rating-select {
+  margin-bottom: 16px;
+}
+
+.rating-select select {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  padding: 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+.rating-select select option {
+  background: var(--bg-secondary);
+}
+
+.review-form textarea {
+  width: 100%;
+  height: 100px;
+  background: rgba(0,0,0,0.2);
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.review-item {
+  padding: 24px 0;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.review-date {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.review-rating {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 2px;
+}
+
+@media (max-width: 1024px) {
+  .pd-content {
+    flex-direction: column;
+  }
+  .pd-sidebar {
+    width: 100%;
+  }
+}
