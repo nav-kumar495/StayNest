@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropertyCard from '../components/PropertyCard';
 import { ChevronLeft } from 'lucide-react';
+import API_BASE from '../config';
 
 const Wishlist = () => {
   const [favorites, setFavorites] = useState([]);
@@ -17,7 +18,7 @@ const Wishlist = () => {
         return;
       }
       try {
-        const res = await fetch('/api/users/me', {
+        const res = await fetch(`${API_BASE}/api/users/me`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {

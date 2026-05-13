@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Calendar, CreditCard, ChevronLeft } from 'lucide-react';
+import API_BASE from '../config';
 import './MyTrips.css';
 
 const MyTrips = () => {
@@ -20,7 +21,7 @@ const MyTrips = () => {
       }
 
       try {
-        const res = await fetch('/api/bookings/my', {
+        const res = await fetch(`${API_BASE}/api/bookings/my`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

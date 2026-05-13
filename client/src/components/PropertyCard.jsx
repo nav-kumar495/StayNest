@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, MapPin, Heart } from 'lucide-react';
+import API_BASE from '../config';
 import './PropertyCard.css';
 
 const PropertyCard = ({ id, title, location, price, rating, imageUrl, isFavoriteInit, onFavoriteToggle }) => {
@@ -32,7 +33,7 @@ const PropertyCard = ({ id, title, location, price, rating, imageUrl, isFavorite
     }
 
     try {
-      const res = await fetch(`/api/users/favorites/${id}`, {
+      const res = await fetch(`${API_BASE}/api/users/favorites/${id}`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API_BASE from '../config';
 import './AuthModal.css';
 
 const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
@@ -14,7 +15,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
     setError('');
     setLoading(true);
 
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+    const endpoint = isLogin ? `${API_BASE}/api/auth/login` : `${API_BASE}/api/auth/register`;
     
     try {
       const res = await fetch(endpoint, {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Star, MapPin, Check, ChevronLeft } from 'lucide-react';
+import API_BASE from '../config';
 import './PropertyDetails.css';
 import { MOCK_PROPERTIES } from '../utils/mockData';
 
@@ -28,7 +29,7 @@ const PropertyDetails = () => {
       try {
         // If it's a mock property due to development (ID is a number from 1-13)
         // the backend might not find it if it was cleared. We seeded DB though!
-        const res = await fetch(`/api/properties/${id}`);
+        const res = await fetch(`${API_BASE}/api/properties/${id}`);
         if (res.ok) {
           const data = await res.json();
           setProperty({
@@ -79,7 +80,7 @@ const PropertyDetails = () => {
 
     const fetchReviews = async () => {
       try {
-        const res = await fetch(`/api/reviews/property/${id}`);
+        const res = await fetch(`${API_BASE}/api/reviews/property/${id}`);
         if(res.ok) setReviews(await res.json());
       } catch(e) { console.error("Reviews error", e); }
     };
@@ -113,7 +114,7 @@ const PropertyDetails = () => {
 
     try {
       setBookingStatus('processing');
-      const res = await fetch('/api/bookings', {
+      const res = await fetch(`${API_BASE}/api/bookings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -151,7 +152,7 @@ const PropertyDetails = () => {
     
     setReviewSubmitting(true);
     try {
-      const res = await fetch('/api/reviews', {
+      const res = await fetch(`${API_BASE}/api/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -161,7 +162,7 @@ const PropertyDetails = () => {
       });
       
       if (res.ok) {
-        const revsRes = await fetch(`/api/reviews/property/${id}`);
+        const revsRes = await fetch(`${API_BASE}/api/reviews/property/${id}`);
         if(revsRes.ok) setReviews(await revsRes.json());
         setNewComment('');
       } else {

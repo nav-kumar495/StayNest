@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE from './config';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Home, Compass, User, LogIn } from 'lucide-react';
 import Hero from './components/Hero';
@@ -166,7 +167,7 @@ const App = () => {
     const token = localStorage.getItem('token');
     if(token) {
       // Fetch authenticated user info
-      fetch('/api/users/me', { headers: { 'Authorization': `Bearer ${token}` }})
+      fetch(`${API_BASE}/api/users/me`, { headers: { 'Authorization': `Bearer ${token}` }})
         .then(res => res.json())
         .then(data => {
             if (data.name) {
@@ -181,7 +182,7 @@ const App = () => {
     // Fetch properties from backend
     const fetchProperties = async () => {
       try {
-        const res = await fetch('/api/properties');
+        const res = await fetch(`${API_BASE}/api/properties`);
         if(res.ok) {
            const data = await res.json();
            const formattedDbProps = data.map(p => ({

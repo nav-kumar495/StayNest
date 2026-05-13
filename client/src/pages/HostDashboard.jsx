@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PlusCircle, Check } from 'lucide-react';
+import API_BASE from '../config';
 import './HostDashboard.css';
 
 const HostDashboard = ({ user }) => {
@@ -42,7 +43,7 @@ const HostDashboard = ({ user }) => {
     const amenityArray = amenities.split(',').map(a => a.trim()).filter(a => a.length > 0);
     
     try {
-      const res = await fetch('/api/properties', {
+      const res = await fetch(`${API_BASE}/api/properties`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
