@@ -228,7 +228,7 @@ const App = () => {
         
         {loadingProps ? (
           <div style={{minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)'}}>
-            Loading premium stays...
+            Loading premium stays...(please wait backend takes 1 minute to load ......)
           </div>
         ) : (
           <Routes>
