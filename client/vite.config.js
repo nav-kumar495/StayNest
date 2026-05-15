@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'staynest-production.up.railway.app',
+        target: 'https://staynest-backend-vhvq.onrender.com',
         changeOrigin: true
       }
     }
